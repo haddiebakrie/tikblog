@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} {% endblock title %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/new_temp.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/fontawesome-free-5.15.3-web/css/all.css' %}">
+        <script type="text/javascript" src="{% static 'blog/js/script.js' %}" ></script>
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'feed' %}"><img src="{% static 'blog/img/logo.png' %}" alt="tikblog" class="logo"></a>
+            <a class="avatar">
+                <a onClick="toggleOption()">
+                    <i class="fa fa-user-circle"></i>
+                </a>
+            <ul class="options" id="opt">
+                <li><a href="{% url 'me' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="#">Notification</a></li>
+                <li><a href="#">Analytics</a></li>
+            </ul>
+            </a>
+            <a href="#" class="link">Membership</a>
+            <a href="#" class="link">Today</a>
+            <a href="#" class="link">Write</a>
+            <hr>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+        <footer>
+            
+        </footer>
+        
+    </body>
+</html>

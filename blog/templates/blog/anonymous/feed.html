@@ -1,0 +1,13 @@
+{% extends "blog/anonymous/head.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="top-banner">
+        <img src="{% static 'blog/img/logo.png' %}" class="uniform-logo">
+        <div class="text-area">
+            <h1>What's Happening?</h3> 
+            <h3>connect with thousands of writers and readers around the globe.</h3>
+        </div>
+    </div>
+    {% include "blog/feed.html" %}
+{% endblock content %}

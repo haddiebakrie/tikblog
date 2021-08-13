@@ -1,0 +1,52 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tik Blog</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/fontawesome-free-5.15.3-web/css/all.css' %}">
+        <link rel="stylesheet" href="">
+        <script type="text/javascript" src="{% static 'blog/js/script.js' %}" ></script>
+    </head>
+    <body>
+        <div class="grid">
+            <div class='top-nav' id='topnav'>
+                <a href="/" class='{% if request.path == "/" %} active {% endif %}'>
+                    <i class="fas fa-home"></i>
+                </a>
+                <a href="{% url 'category' %}" class='{% if request.path == "/category/" %} active {% endif %}'>Categories</a>
+                <a href="{% url 'about' %}" class='{% if request.path == "/about/" %} active {% endif %}'>About Blog</a>
+                <a href="#" class='{% if request.path == "/about/" %} active {% endif %}'>Contact</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class='right {% if request.path == "/category/" %} active {% endif %}'>Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class='right {% if request.path == "/category/" %} active {% endif %}'>Login</a>
+                    <a href="{% url 'register' %}" class='right {% if request.path == "/category/" %} active {% endif %}'>Signup</a>
+                    {% endif %}
+                <a href="javascript:void(0);" class="icon" onClick="funcop()" value='Display'>
+                    <div class="menu-1"></div>
+                    <div class="menu-2"></div>
+                    <div class="menu-3"></div>
+                </a>
+            </div>
+            <main class='main'>
+                <div class="post-sec">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+                <div class="sidebar-sec">
+                    {% include "blog/sidebar.html" %}
+                </div>
+            </main>
+            <footer class="footer-sec">
+                {% include "blog/footer.html" %}
+            </footer>
+        </div>
+    </body>
+
+</html>

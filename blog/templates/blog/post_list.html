@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tik Blog</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/new_temp.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/fontawesome-free-5.15.3-web/css/all.css' %}">
+        <script type="text/javascript" src="{% static 'blog/js/script.js' %}" ></script>
+    </head>
+    <body>
+        <header>
+            <img src="{% static 'blog/img/logo.png' %}" alt="tikblog" class="logo">
+            <button class="btn btn-primary">Log out</button>
+            <a href="#">Membership</a>
+            <a href="#">Today</a>
+            <a href="#">Write</a>
+            <hr>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+        <footer>
+            
+        </footer>
+        
+    </body>
+</html>

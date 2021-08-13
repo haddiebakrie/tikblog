@@ -1,0 +1,66 @@
+
+{% block content %}
+<div class="col-mid">
+    <div class="p5">
+        <div class="post-ccard m5">
+            <a >{{post.author | title }}</a><small class="muted"> &#x2022; {{ post.created_on | date:'M d, Y'}}</small><svg class='svg' ><path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg>
+            <a href="{% url 'post_detail' post.category.slug post.slug %}" class="title"><h2>{{ post.title}}</h2></a>
+            
+            {% if post.image %}
+            <div>
+                <img class="img" src="{{ post.image.url }}">
+            </div> 
+            {% endif %}
+            <p class="body">{{ post.content }}</p>
+            <a href="{% url 'post_detail' post.category.slug post.slug %}"> Read more</a><small class="muted"> &#x2022; {{ post.get_readtime }} read</small>
+            <div class="post-reactions">
+                <span>
+                    <i class="far fa-heart"><small>180</small></i>
+                </span>
+                <span>
+                    <i class="far fa-comment-alt"><small>5</small></i>
+                </span>
+                <span>
+                    <i class="far fa-share-square"><small>890</small></i>
+                </span>
+                <span>
+                    <i class="far fa-bookmark"></i>
+                </span>
+            </div>
+        </div>
+        <br>
+        <hr>
+        {% if post.post_comments.all.count > 0 %}
+        {% for comment in post.post_comments.all %}
+        <div class='comment-ccard'>
+            <div class="head">
+                <img class="img" src="{{ comment.user.profile.dp.url }}">
+                <div>
+                    <h2 class="title">{{ comment.user.username }}</h2>
+                    <small class='muted'>{{comment.date_added}}</small>
+                    <p class="body">{{ comment.body}}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        
+        {% else %}
+        <h4> <strong>No Comments yet.</strong></h4>
+        {% endif %}
+        
+        <div class="">
+            <div class="form">
+                <div>
+                    <h2>Leave a comment.</h2>
+                </div>
+                <form action='.', method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-success btn-sm">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

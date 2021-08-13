@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.top-nav {
+    background-color: #04AA6D;
+    display: flex;
+}
+
+.top-nav a{
+    text-decoration: none;
+    padding: 20px;
+    color: #f2f2f2;
+    font-size: 120%;
+}
+
+.top-nav .icon{
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.m5 {
+    margin: 5px;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-b {
+    border: 1.5px solid #333;
+}
+
+.card .title {
+    font-size: 180%;
+    font-weight: bolder;
+}
+
+.card .body {
+    font-size: 120%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card .muted {
+    font-size: 90%;
+    color: #333;
+    font-weight: 600;
+}
+
+.card .tag {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #04AA6D;
+}
+
+.card-right {
+    float: right;
+}
+
+.left {
+    position: absolute;
+    left: 0%;
+}
+
+.right {
+    position: absolute;
+    right: 0%;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #04AA6D;
+    color: #f2f2f2;
+}
+
+.btn-primary:hover {
+    background-color: #f2f2f2;
+    color: #04AA6D;
+}
+
+.grid {
+    display: block;
+    height: 100%;
+}
+
+.grid main{
+    display: flex;
+    min-height: 60vh;
+}
+
+.footer-sec {
+    background-color: #04AA6D;
+    padding: 30px 10px;
+}
+
+.footer {
+    background-color: #04AA6D;
+    justify-content: space-around;
+    padding: 40px 20px;
+    display: flex;
+}
+
+.footer .column .headline {
+    color: #f2f2f2;
+    font-size: 120%;
+    border-left: #f2f2f2 3px solid;
+    padding-left: 5px;
+
+}
+
+.footer .column ul {
+    list-style-type: none;
+}
+
+.footer .column ul li a{
+    text-decoration: none;
+    margin-top: 10px;
+    color: #f2f2f2;
+}
+
+.footer .column ul li a:hover{
+    margin-left: 10px;
+}
+
+.addr {
+    margin-top: 10px;
+    font-size: 90%;
+}
+
+.addr i {
+    margin-right: 5px;
+}
+
+.sidebar {
+    font-size: 120%;
+    text-align: center;
+    padding: 5px;
+}
+
+.page-title {
+    padding: 10px;
+}
+
+.c-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    border: #f2f2f2 solid 2px;
+    padding: 5px;
+}
+
+.grid .sidebar-sec {
+    width: 20%;
+}
+
+.grid .post-sec {
+    width: 80%;
+}
+
+.c-card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.c-card .title {
+
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+    font-size: 120%;
+}
+
+.base {
+    height: 750px;
+    display: block;
+}
+
+.c-card .desc {
+    font-size: 120%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.c-card .muted {
+    font-size: 90%;
+    color: #333;
+    font-weight: 600;
+}
+
+@media screen and (max-width:600px) {
+    .top-nav a:not(:first-child) {
+        display: none;
+    }
+
+    .top-nav.responsive {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .top-nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .top-nav.top-nav.responsive a:not(:last-child) {
+        display: block;
+        float: none;
+        text-align: left;
+        position: relative;
+    }
+
+    .top-nav {
+        justify-content: space-between;
+    }
+
+    .top-nav.responsive {
+        float: none;
+    }
+
+    .top-nav a.icon {
+        display: block;
+        float: right;
+    }
+
+    .menu-1, .menu-2, .menu-3 {
+        background-color: #f2f2f2;
+        width: 25px;
+        height: 3px;
+        margin: 3px;
+        transition: 0.25s;
+    }
+
+    .top-nav.responsive .menu-1 {
+        transform: rotate(-45deg) translateX(-5px);
+        margin: 0;
+    }
+    
+    .top-nav.responsive .menu-2 {
+        margin: 0;
+        opacity: 0;
+    }
+
+    .top-nav.responsive .menu-3 {
+        transform: rotate(45deg) translateX(-4px);
+        margin: 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        background-color: #04AA6D;
+        color: #f2f2f2;
+    }
+
+    .grid main {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .grid .sidebar-sec {
+        width: 100%;
+    }
+    
+    .grid .post-sec {
+        width: 100%;
+    }
+
+}
+

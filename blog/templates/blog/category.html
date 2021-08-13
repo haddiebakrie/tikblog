@@ -1,0 +1,26 @@
+{% block content %}
+<div class="category-banner">
+    <div class="banner-bg"></div>
+    <div class="text-area">
+        <h1>Topics</h1>
+        <h3>Some amazing topics for YOU</h3> 
+    </div>
+</div>
+<div class="col-mid">
+    <div>
+        {% for category in category%}
+        <div class="post-ccard">
+            <a href="{% url 'category_post' category.slug %}" class="title"><h2>{{ category.title}}</h2></a>
+            <a href="{% url 'category_post' category.slug %}" class="body"><p>{{ category.description | truncatechars:"200"}}</p></a>
+            <p class='muted'>{{ category.post.all | length }} posts</p>
+            {% if category.post.first.image %}
+            <div>
+                <img class="img" src="{{ category.post.first.image.url }}">
+            </div> 
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
