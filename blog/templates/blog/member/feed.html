@@ -1,0 +1,20 @@
+{% extends "blog/member/head.html" %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'ff_posts')" id="olo">Recent Posts</button>
+        <button class="tablinks" id="fy" onclick="openTab(event, 'fy_posts')">Following</button>
+    </div>
+    <div id=basetab>
+        <div class="tabcontent" id="ff_posts">
+            {% include "blog/feed.html" %}
+        </div>
+        <div class="tabcontent" id="fy_posts">
+        </div>
+    </div>
+{% endblock content %}

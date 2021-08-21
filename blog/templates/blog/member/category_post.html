@@ -1,0 +1,10 @@
+{% extends "blog/member/head.html" %}
+{% load static %}
+
+{% block title %}
+    {{ category.title }} - TikBlog
+{% endblock title %}
+
+{% block content %}
+{% include "blog/category_post.html" %}
+{% endblock content %}

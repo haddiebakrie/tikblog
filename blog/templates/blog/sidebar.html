@@ -1,0 +1,13 @@
+{% block sidebar %}
+    <div class="sidebar">
+        <h3><center>Topics</center></h3>
+        <div class="container">
+            {% for category in categories %}
+            <div class="btn-rect">
+                {{ category }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock sidebar %}

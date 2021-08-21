@@ -1,0 +1,22 @@
+{% extends "blog/anonymous/head.html" %}
+
+{% block title %}
+    Get Started - TikBlog
+{% endblock title %}
+
+{% block content %}
+    <div class="get-started">
+        <h1>
+            Get Started
+        </h1>
+        <p class="det">Create a tikblog account today to get access to 
+            thousands of authentic contents for our creative
+            writers.
+        </p>
+        <div class="select">
+            <a href="{% url 'register' %}" class="btn btn-primary hover">Sign up</a>
+            <p>Already have an account?</p>
+            <a href="{% url 'login' %}" class="btn btn-primary hover">Login</a>
+        </div>
+    </div>
+{% endblock content %}

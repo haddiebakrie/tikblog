@@ -1,0 +1,17 @@
+{% extends "blog/anonymous/head.html" %}
+
+{% block title %}
+    Login - TikBlog
+{% endblock title %}
+
+{% block content %}
+
+<div class="form" >
+    <form method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+{% endblock content %}
