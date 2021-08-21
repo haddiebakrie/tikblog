@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    box-sizing: border-box;
+}
+
+:root {
+    --space: 2rem;
+    --space-xs: calc(var(--space) / 3);
+    --space-sm: calc(var(--space) / 2);
+    --space-md: calc(var(--space) * 2);
+  
+    --color-primary: lightgray;
+    --color-accent: whitesmoke;
+    --color-dark: black;
+    --color-mid: gray;
+    --color-light: white;
+    --color-highlight: dodgerblue;
+  
+    --radius: 0.125rem;
+  }
+  
+
+/* Heading  */
+
+header {
+    height: 60px;
+    background-color: #242d3d;
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    z-index: 10000;
+}
+
+
+header hr {
+    margin:  5px -10px;
+    border-width: 1px;
+    border-bottom: 0px;
+}
+
+header .logo {
+    height: 100%;
+    width: 50px;
+    object-fit: cover;
+}
+
+header .link {
+    text-decoration: none;
+    color: #f2f2f2;
+    display: block;
+    padding: 10px 0;
+    margin-right: 20px;
+    float: right;
+    overflow: hidden;
+}
+
+header .btn {
+    float: right;
+    padding: 10px;
+    text-decoration: none;
+}
+
+header a i{
+    float: right;
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 200%;
+    cursor: pointer;
+}
+
+header .options{
+    flex-direction: column;
+    position: absolute;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #fff;
+    list-style: none;
+    right: 2%;
+    display: none;
+}
+
+header .options.list {
+    display: flex;
+}
+
+header ul li {
+    color: #242d3d;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: #f2f2f2;
+    color: #242d3d;
+    border: none;
+    border-radius: 16px;
+    font-size: 90%;
+}
+
+.btn.btn-primary.hover:hover {
+    background-color: #f2f2f2;
+    color: #2f2d3d;
+}
+
+
+/* Landing Page  */
+
+.top-banner {
+    height: 150px;
+    background-color: #242d3d;
+    padding: 10px;
+    display: block;
+    overflow: hidden;
+}
+
+.top-banner .uniform-logo{
+    height: 280px;
+    width: 280px;
+    right: 5%;
+    top: 4%;
+    position: absolute;
+    opacity: 10%;
+    z-index: 1;
+}
+.top-banner .text-area {
+    color: #f2f2f2;
+    max-width: 250px;
+}
+
+.top-banner .text-area h3 {
+    line-height: 20px;
+}
+
+.top-banner .text-area h1 {
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+/* Read Area  */
+
+.col2-1 {
+    display: flex;
+    height: 100vh;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.col2-1 .w1 {
+    width: 75%;
+    flex-direction: column;
+    align-self: start;
+    --offset: var(--space);
+    position: sticky;
+    top: var(--offset);
+}
+
+.col2-1 .w2 {
+    width: 25%;
+}
+
+/* Post Card  */
+
+.post-hcard {
+    max-height: 120px;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    justify-content: space-between;
+}
+
+.post-hcard .img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    align-self: flex-end;
+    padding: 5px;
+}
+
+.post-hcard .body{
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 500;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    font-size: 100%;
+}
+
+.post-hcard .title {
+    text-decoration: none;
+    color: black;
+    font-size: 130%;
+    display: -webkit-box;
+    overflow: hidden;
+    text-decoration: none;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.bd {
+    border: #f2f2f2 solid 1px;
+}
+
+.post-hcard .muted {
+    color: #242d3d;
+    font-size: 80%;
+}
+
+.post-hcard .text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 120px;
+}
+
+.post-hcard .tag {
+    text-decoration: none;
+    color: black;
+    font-size: 80%;
+}
+
+.post-card {
+    padding: 10px;
+}
+
+.post-card .img{
+    width: 100%;
+}
+
+.post-card .title {
+    font-size: 150%;
+    color: #242d3d;
+}
+
+.post-card .body {
+    font-weight: 700;
+    color: #242d3d;
+}
+.post-card .tag {
+    text-decoration: none;
+    color: #242d3d;
+}
+
+.post-card .muted {
+    font-size: 80%;
+    color: #242d3d91;
+    padding: 5px;
+}
+
+/* SideBar  */
+
+.sidebar {
+    align-self: start;
+    --offset: var(--space);
+    position: sticky;
+    top: var(--offset);
+}
+
+.sidebar .container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
+}
+
+.sidebar .container .btn-rect {
+    padding: 5px;
+    text-decoration: none;
+    border: #242d3d solid 1px;
+    margin: 5px;
+    font-size: 60%;
+    line-height: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Comments */
+
+.comments {
+    display: flex;
+    padding: 10px;
+    border: #f2f2f2 solid 1px;
+}
+
+.comments .muted {
+    color: #242d3d91;
+}
+
+
+/* Forms  */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.form form{
+    max-width: 400px;
+    height: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form form p input {
+    border: #242d3d19 solid .1px;
+    background-color: #f2f2f2;
+    outline: #242d3d solid 0;
+    font-size: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 500;
+    max-height: 100%;
+}
+
+.form form textarea {
+    border: #242d3d19 solid .1px;
+    background-color: #f2f2f2;
+    outline: #242d3d solid 0;
+    font-size: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 500;
+    max-height: 100%;
+    resize: none;
+}
+
+
+.form form p {
+    align-items: center;
+    margin: 5px;
+    /* justify-items: space-between; */
+}
+
+.form form input:focus {
+    border-radius: 20px;
+    outline-style: none;
+    border: #242d3d solid .1px;
+}
+
+.form form .helptext {
+    font-size: 80%;
+    width: max-content;
+    color: #242d3d;
+    font-weight: 500;
+}
+
+.form form label {
+    font-size: 100%;
+    width: max-content;
+    color: #242d3d;
+}
+
+.form form ul li {
+    font-size: 80%;
+    color: #242d3d;
+    font-weight: 500;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.form form button {
+    border: none;
+    padding: 15px;
+    background-color: #242d3d;
+    color: #f2f2f2;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+.form form p select {
+    font-weight: 500;
+    outline: 0;
+    padding: 5px;
+}
+
+.form form p select option{
+    font-weight: 500;
+}
+
+.form form #id_gender li{
+    font-size: 80%;
+    color: #242d3d;
+    font-weight: 500;
+    list-style: none;
+    margin-left: 10px;
+}
+
+/* Others  */
+
+.get-started {
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+    align-items: center;
+    color: #242d3d;
+    padding: 5px;
+}
+
+.get-started h1, .get-started .det {
+    text-align: center;
+    max-width: 50%;
+    margin-bottom: 10px;
+}
+
+.get-started .select .btn {
+    color: #f2f2f2;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 20px;
+    background-color: #242d3d;
+}
+
+.get-started .select {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media Query */
+
+@media screen and (max-width:800px) {
+    header .link {
+        display: none;
+    }
+
+    header.default .link {
+        display: block;
+    }
+
+    .col2-1 .w1 {
+        width:100%;
+    }
+    .col2-1 .w2{
+        display: none
+    }
+    .get-started h1, .get-started .det {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .post-hcard {
+        flex-direction: column;
+        max-height: fit-content;
+    }
+
+    .post-hcard .img {
+        order: 2;
+        width: 100%;
+    }
+
+    .post-hcard .text-area {
+        order: 1;
+    }
+
+
+}
